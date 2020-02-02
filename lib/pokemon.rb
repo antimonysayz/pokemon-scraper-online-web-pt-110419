@@ -2,7 +2,7 @@ class Pokemon
   attr_accessor :name, :type, :db
   attr_reader :id
 
-  def initialize(id, name, type, db)
+  def initialize(id:, name:, type:, db:)
     @name = name
     @id = id
     @type = type
@@ -22,7 +22,7 @@ class Pokemon
     WHERE id = (?)
     SQL
     pokemon = db.execute(sql, id).flatten
-    Pokemon.new(id, pokemon[1], pokemon[2], db)
+    Pokemon.new(pokemon[0], pokemon[1], pokemon[2], db)
   end
 
 
