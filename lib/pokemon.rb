@@ -22,7 +22,6 @@ class Pokemon
     WHERE id = ?
     SQL
     db.execute(sql, self.id)
-
   end
 
 
